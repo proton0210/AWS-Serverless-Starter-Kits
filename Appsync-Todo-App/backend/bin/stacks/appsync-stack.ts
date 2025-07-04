@@ -26,6 +26,7 @@ export class AppsyncStack extends cdk.Stack {
     this.createResolvers(props);
     this.exportValues();
   }
+  
   private createAppsyncApi(props: AppsyncStackProps): appsync.GraphqlApi {
     const api = new appsync.GraphqlApi(this, "TodoAppyncApi", {
       name: "TodoAppsyncApi",
@@ -52,6 +53,9 @@ export class AppsyncStack extends cdk.Stack {
       },
       xrayEnabled: true,
     });
+    
+    // Set removal policy to destroy
+    api.applyRemovalPolicy(cdk.RemovalPolicy.DESTROY);
     
     return api;
   }

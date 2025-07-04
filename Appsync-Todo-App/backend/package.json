@@ -8,7 +8,10 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "test:e2e": "jest --testPathPattern=e2e",
+    "cdk": "cdk",
+    "deploy": "cdk deploy --all --outputs-file cdk-outputs.json && node scripts/convert-outputs.js",
+    "destroy": "cdk destroy --all"
   },
   "devDependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.840.0",
