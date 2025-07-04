@@ -1,3 +1,5 @@
+// 909869235307
+//OrganizationAccountAccessRole
 import { DynamoDBClient, PutItemCommand } from "@aws-sdk/client-dynamodb";
 import { PostConfirmationConfirmSignUpTriggerEvent } from "aws-lambda";
 import { marshall } from "@aws-sdk/util-dynamodb";
